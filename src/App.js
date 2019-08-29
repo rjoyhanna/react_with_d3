@@ -22,8 +22,16 @@ import WorldMap from './WorldMap'
 class App extends Component {
 
    state = {
-     data: [12, 5, 6, 6, 9, 10],
-     width: 700,
+     data: [
+       {word: 'we', number: 12},
+       {word: 'a', number: 5},
+       {word: 'the', number: 18},
+       {word: 'um', number: 2},
+       {word: 'it', number: 6},
+       {word: 'that', number: 8},
+       {word: 'yes', number: 1},
+     ],
+     width: 800,
      height: 500,
      id: '#root'
    }

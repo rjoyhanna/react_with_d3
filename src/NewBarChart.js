@@ -12,7 +12,7 @@ class NewBarChart extends Component {
     // svg.selectAll("rect").data(data).enter().append("rect")
     // selection.attr("property", (d, i) => {})
     svg.selectAll("rect")
-      .data(data)
+      .data(data.map(a => a.number))
       .enter()
       .append("rect")
       .attr("x", (d, i) => i * 110)
@@ -22,12 +22,22 @@ class NewBarChart extends Component {
       .attr("fill", "green");
 
     svg.selectAll("text")
-      .data(data)
+      .data(data.map(a => a.number))
       .enter()
       .append("text")
       .text((d) => d)
       .attr("x", (d, i) => i * 110)
       .attr("y", (d, i) => h - (10 * d) - 3)
+
+
+    // trying to add word labels
+    svg.selectAll("text")
+      .data(data.map(a => a.word))
+      .enter()
+      .append("text")
+      .text((d) => d)
+      .attr("x", 200)
+      .attr("y", 200)
   }
 
   componentDidMount() {
